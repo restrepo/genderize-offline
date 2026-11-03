@@ -31,7 +31,7 @@ DICTIONARY_FILE = "wgnd2_compact.tsv.gz"
 DICTIONARY_URL = (
     f"https://github.com/restrepo/genderize-offline/releases/download/{DICTIONARY_RELEASE}/{DICTIONARY_FILE}"
 )
-DICTIONARY_SHA256 = "c22c996e8182b8f62a71b8f860cf5e31517a94e7def1bfe0811b0f1c56276f84"
+DICTIONARY_SHA256 = "c9020732db57856a45f5bdb469b971a5ad3febf684eef0e6256757b61a07ffaf"
 
 
 def cache_dir():
@@ -63,9 +63,9 @@ def build(src_csv, dst_gz):
         by = {c: fm[0] / (fm[0] + fm[1]) for c, fm in by_code.items() if fm[0] + fm[1] > 0}
         if not by or not name or "\t" in name or "\n" in name:
             continue
-        world = round(sum(by.values()) / len(by), 3)
-        extra = ",".join(f"{c}:{round(p, 3):g}" for c, p in sorted(by.items()) if c and round(p, 3) != world)
-        rows[name] = f"{world:g}\t{len(by)}\t{extra}"
+        world = round(sum(by.values()) / len(by), 6)
+        extra = ",".join(f"{c}:{round(p, 6):g}" for c, p in sorted(by.items()) if c and round(p, 6) != world)
+        rows[name] = f"{world:g}\t{sum(1 for c in by if c)}\t{extra}"
     # an accent-free spelling not in WGND gets the entry of the first accented one (andres -> andrés)
     for name in sorted(rows):
         rows.setdefault(strip_accents(name), rows[name])

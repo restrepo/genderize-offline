@@ -23,10 +23,10 @@ genderize-offline fetch          # once: downloads the dictionary (14 MB) into t
 ```python
 from genderize_offline import guess, genderize
 
-guess("Natalia Andrea", "CO")      # ('female', 1.0, 58)
-guess("Andrea", "Italy")           # ('male', 1.0, 77)  country names or ISO2 codes
-guess("Andrea", "CO")              # ('female', 0.96, 77)
-genderize("Andrea", "IT")          # {'count': 77, 'name': 'Andrea', 'gender': 'male', 'probability': 1.0, 'country_id': 'IT'}
+guess("Natalia Andrea", "CO")  # ('female', 1.0, 58)
+guess("Andrea", "Italy")  # ('male', 1.0, 77)  country names or ISO2 codes
+guess("Andrea", "CO")  # ('female', 0.96, 77)
+genderize("Andrea", "IT")  # {'count': 77, 'name': 'Andrea', 'gender': 'male', 'probability': 1.0, 'country_id': 'IT'}
 ```
 
 `guess(names, country)` returns `(gender, probability, count)`: gender `male`, `female` or
@@ -67,16 +67,16 @@ physicists, genders from genderize.io):
 
 | genderize.io ↓ / offline → | male | female | unknown |
 |---|---|---|---|
-| male | 14,485 | 39 | 680 |
+| male | 14,479 | 39 | 686 |
 | female | 23 | 2,635 | 155 |
 | unknown | 677 | 176 | 11,109 |
 
 | | genderize.io | genderize-offline |
 |---|---|---|
-| Authors with a gender | 18,017 | 18,035 |
+| Authors with a gender | 18,017 | 18,029 |
 | Female share | 15.6% | 15.8% |
 
-Where both give a gender (17,182 authors) they agree on **99.64%**.
+Where both give a gender (17,176 authors) they agree on **99.64%**.
 
 **Effect on published results.** We recomputed the female fractions of *Statistical Analysis
 of Scientific Metrics in High Energy, Cosmology, and Astroparticle Physics in Latin America*
@@ -93,6 +93,9 @@ by less than its 95% margin:
 
 The female share per year (Fig. 21, 45 years with at least 100 authors) differs by −0.04
 points on average and by at most 1.2 points.
+
+These are the genders of the paper's [reproduction dashboard](https://claude.ai/artifact/68auWa5zrhfda8bjZ6yS3w):
+the package gives the same gender to every one of the 29,979 authors.
 
 **Speed** (one core, laptop): the dictionary loads in about 1 s; lookups run at about
 140,000 names/s.
