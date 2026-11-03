@@ -11,7 +11,7 @@ license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [{ name = "Diego Restrepo", email = "restrepo@udea.edu.co" }]
-keywords = []
+keywords = ["gender", "genderize", "names", "first names", "WGND", "bibliometrics", "offline"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
@@ -42,7 +42,7 @@ source = "vcs"
 local_scheme = "no-local-version"   # PyPI and TestPyPI reject local versions (+g1234abc)
 
 [tool.hatch.build.targets.sdist]
-include = ["src/", "tests/", "README.md", "CHANGELOG.md", "LICENSE"]
+include = ["src/", "tests/", "benchmarks/", "README.md", "CHANGELOG.md", "LICENSE"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/genderize_offline"]
