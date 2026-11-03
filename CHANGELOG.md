@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-03
+
 ### Added
 
 - `guess(names, country)` and `genderize(names, country_id)` (genderize.io-shaped answer),
@@ -15,4 +17,5 @@ All notable changes to this project are documented here. The format follows
   and downloaded on first use with a SHA-256 check; fallback build from Harvard Dataverse.
 - Benchmarks against genderize.io (`benchmarks/benchmark.py`, README).
 
-[Unreleased]: https://github.com/restrepo/genderize-offline/commits/main
+[Unreleased]: https://github.com/restrepo/genderize-offline/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/restrepo/genderize-offline/releases/tag/v0.1.0
