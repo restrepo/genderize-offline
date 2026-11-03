@@ -94,7 +94,7 @@ by less than its 95% margin:
 The female share per year (Fig. 21, 45 years with at least 100 authors) differs by −0.04
 points on average and by at most 1.2 points.
 
-These are the genders of the paper's [reproduction dashboard](https://claude.ai/artifact/68auWa5zrhfda8bjZ6yS3w):
+These are the genders used to reproduce the paper's results:
 the package gives the same gender to every one of the 29,979 authors.
 
 **Speed** (one core, laptop): the dictionary loads in about 1 s; lookups run at about
